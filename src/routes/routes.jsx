@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/pages/Home";
-import Task1 from "../components/pages/Task1";
+import RomanConverter from "../components/pages/RomanConverter";
 import Task2 from "../components/pages/Task2";
 import Task3 from "../components/pages/Task3";
 
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
         element: <Home />
     },
     {
-        path: "/task1",
-        element: <Task1 />
+        path: "/roman-arabic",
+        element: <RomanConverter />
     },
     {
         path: "/task2",
