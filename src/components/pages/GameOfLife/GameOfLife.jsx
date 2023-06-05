@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GameContainer, Cell, BoardContainer, ButtonContainer } from "./styles";
 import { WIDTH, HEIGHT } from "./constants";
 import Button from "../../Button/Button";
-import Header from "../../Header/Header"
+
 
 const GameOfLife = () => {
     const [board, setBoard] = useState([]);
@@ -92,7 +92,6 @@ const GameOfLife = () => {
 
     return (
         <>
-            <Header />
             <GameContainer>
                 <h1>Jogo da Vida</h1>
                 <BoardContainer>{renderBoard()}</BoardContainer>

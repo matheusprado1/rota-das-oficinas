@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Title, Form, Input, Label, ArabicNumber, ErrorMessage } from "./styles";
 import Button from "../../Button/Button";
-import Navigation from "../../Header/Header"
+
 
 const RomanConverter = () => {
     // State hooks para o número romano, número arábico e mensagem de erro
@@ -107,7 +107,6 @@ const RomanConverter = () => {
     // Renderização do componente
     return (
         <>
-            <Navigation />
             <Container>
                 <Title>Conversor de Números Romanos</Title>
                 <Form>
