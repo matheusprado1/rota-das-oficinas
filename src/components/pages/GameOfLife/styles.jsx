@@ -7,7 +7,8 @@ export const GameContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    height: 100vh;
+    height: 89vh;
+
 `;
 
 export const BoardContainer = styled.div`
@@ -26,9 +27,12 @@ export const Cell = styled.div`
 `;
 
 export const ButtonContainer = styled.div`
-    margin-top: 10px;
+
+    margin-top: 15px;
 `;
 
-export const Button = styled.button`
-    margin-right: 10px;
-`;
+
+
+
+
+

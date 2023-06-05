@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { GameContainer, Cell, Button, BoardContainer, ButtonContainer } from "./styles";
+import { GameContainer, Cell, BoardContainer, ButtonContainer } from "./styles";
 import { WIDTH, HEIGHT } from "./constants";
+import Button from "../../Button/Button";
+import Header from "../../Header/Header"
 
 const GameOfLife = () => {
     const [board, setBoard] = useState([]);
@@ -89,14 +91,18 @@ const GameOfLife = () => {
     };
 
     return (
-        <GameContainer>
-            <h1>Jogo da Vida</h1>
-            <BoardContainer>{renderBoard()}</BoardContainer>
-            <ButtonContainer>
-                <Button onClick={updateBoard}>Próxima Geração</Button>
-                <Button onClick={initializeBoard}>Reiniciar</Button>
-            </ButtonContainer>
-        </GameContainer>
+        <>
+            <Header />
+            <GameContainer>
+                <h1>Jogo da Vida</h1>
+                <BoardContainer>{renderBoard()}</BoardContainer>
+                <ButtonContainer >
+                    <Button onClick={updateBoard}>Próxima Geração</Button>
+                    <Button onClick={initializeBoard}>Reiniciar</Button>
+                </ButtonContainer>
+            </GameContainer>
+        </>
+
     );
 };
 

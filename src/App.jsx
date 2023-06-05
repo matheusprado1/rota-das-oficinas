@@ -1,14 +1,21 @@
-import { RouterProvider, } from 'react-router-dom';
-import router from "./routes/routes"
+import { BrowserRouter as Router } from "react-router-dom";
+import AppRoutes from "./routes/routes";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
-
     return (
-
         <>
-            <RouterProvider router={router} />
+            <GlobalStyle />
+            <Router>
+                <Header />
+                <AppRoutes />
+                <Footer />
+            </Router>
+
         </>
-    )
+    );
 }
 
 export default App;

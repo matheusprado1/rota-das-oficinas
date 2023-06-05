@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Container, Title, Form, Input, Label, ArabicNumber, ErrorMessage, Button } from "./styles";
+import { Container, Title, Form, Input, Label, ArabicNumber, ErrorMessage } from "./styles";
+import Button from "../../Button/Button";
+import Navigation from "../../Header/Header"
 
 const RomanConverter = () => {
     // State hooks para o número romano, número arábico e mensagem de erro
@@ -104,26 +106,30 @@ const RomanConverter = () => {
 
     // Renderização do componente
     return (
-        <Container>
-            <Title>Conversor de Números Romanos</Title>
-            <Form>
-                <Label>
-                    Insira um número romano:
-                    <Input
-                        type="text"
-                        value={romanNumber}
-                        onChange={handleRomanInputChange}
-                    />
-                </Label>
-                <Button type="button" onClick={handleConvertClick}>
-                    Converter
-                </Button>
-            </Form>
-            {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
-            {arabicNumber && (
-                <ArabicNumber>O número arábico correspondente é: {arabicNumber}</ArabicNumber>
-            )}
-        </Container>
+        <>
+            <Navigation />
+            <Container>
+                <Title>Conversor de Números Romanos</Title>
+                <Form>
+                    <Label>
+                        Insira um número romano:
+                        <Input
+                            type="text"
+                            value={romanNumber}
+                            onChange={handleRomanInputChange}
+                        />
+                    </Label>
+                    <Button type="button" onClick={handleConvertClick}>
+                        Converter
+                    </Button>
+                </Form>
+                {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+                {arabicNumber && (
+                    <ArabicNumber>O número arábico correspondente é: {arabicNumber}</ArabicNumber>
+                )}
+            </Container>
+        </>
+
     );
 };
 
