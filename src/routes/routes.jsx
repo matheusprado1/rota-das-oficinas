@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../components/pages/Home";
 import RomanConverter from "../components/pages/RomanConverter/RomanConverter";
-import Task2 from "../components/pages/Task2";
 import Task3 from "../components/pages/Task3";
+import GameOfLife from "../components/pages/GameOfLife/GameOfLife";
 
 
 const router = createBrowserRouter([
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
         element: <RomanConverter />
     },
     {
-        path: "/task2",
-        element: <Task2 />
+        path: "/game-of-life",
+        element: <GameOfLife />
     },
     {
         path: "/task3",
