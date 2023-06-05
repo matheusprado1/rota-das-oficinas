@@ -5,8 +5,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 91vh;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 25vh;
 `;
 
 export const Title = styled.h1`

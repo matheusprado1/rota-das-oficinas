@@ -6,8 +6,8 @@ export const GameContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    height: 89vh;
+    margin-top: 12vh;
+
 
 `;
 
