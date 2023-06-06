@@ -23,6 +23,7 @@ const GameOfLife = () => {
     const updateBoard = () => {
         const newBoard = board.map((row) => [...row]);
 
+
         for (let i = 0; i < HEIGHT; i++) {
             for (let j = 0; j < WIDTH; j++) {
                 const neighbors = countNeighbors(i, j);
