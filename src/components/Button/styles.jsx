@@ -10,6 +10,7 @@ export const StyledButton = styled.button`
     border-radius: 4px;
     cursor: pointer;
     margin-right: 5px;
+    margin-top: 10px;
 
 
     &:hover {
