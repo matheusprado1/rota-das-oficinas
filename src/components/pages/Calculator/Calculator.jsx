@@ -105,6 +105,7 @@ const Calculator = () => {
                                 <Label>{product.name}:</Label>
                                 <input
                                     type="number"
+                                    placeholder='quantidade'
                                     value={customer.consumption[product.id] || ''}
                                     onChange={event =>
                                         handleCustomerChange(index, 'consumption', {
