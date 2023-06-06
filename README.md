@@ -18,6 +18,19 @@ O projeto consiste em um teste de programação que envolve o desenvolvimento de
 - React
 - NPM
 
+## Deploy e Configuração
+
+O projeto foi configurado para realizar um deploy automatizado usando o GitHub Actions e o serviço de bucket S3 da AWS. Para que o deploy seja realizado corretamente, você precisa configurar as seguintes variáveis de ambiente no GitHub:
+
+- **AWS_ACCESS_KEY_ID**: A chave de acesso da sua conta da AWS.
+- **AWS*SECRET_ACCESS*KEY**: A chave secreta de acesso da sua conta da AWS.
+
+Certifique-se de configurar essas variáveis de ambiente corretamente antes de executar o fluxo de deploy.
+
+Para acessar o projeto online, visite o seguinte link: [
+http://rota-das-oficinas.s3-website-sa-east-1.amazonaws.com/
+](http://rota-das-oficinas.s3-website-sa-east-1.amazonaws.com/).
+
 ## Instruções de Uso
 
 Para executar o projeto localmente, siga as instruções abaixo:
