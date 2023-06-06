@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <Container>
                 <h1>Bem vindo ao Teste de Programação </h1>
-                <p>para navegar basta clicar no menu </p>
+                <h2>Para navegar entre as tarefas basta clicar nos links no header</h2>
             </Container>
             <Footer />
         </>
