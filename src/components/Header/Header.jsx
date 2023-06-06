@@ -30,7 +30,7 @@ const Header = () => {
                         <NavigationLink to="/game-of-life" onClick={toggleMenu}>Jogo da Vida</NavigationLink>
                     </NavigationListItem>
                     <NavigationListItem>
-                        <NavigationLink to="/calculator-divider" onClick={toggleMenu}>Calculadora</NavigationLink>
+                        <NavigationLink to="/calculator" onClick={toggleMenu}>Calculadora</NavigationLink>
                     </NavigationListItem>
                 </NavigationList>
             </nav>
