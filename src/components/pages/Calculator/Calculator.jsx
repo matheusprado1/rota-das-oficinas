@@ -32,7 +32,7 @@ const Calculator = () => {
         const numCustomers = customers.length;
 
         if (totalCost === 0 || numCustomers === 0) {
-            alert('Please enter products and customers before splitting the bill.');
+            alert('Insira produtos e clientes antes de dividir a conta.');
             return;
         }
 
