@@ -24,7 +24,7 @@ const Header = () => {
                 </MenuButton>
                 <NavigationList isOpen={isOpen}>
                     <NavigationListItem>
-                        <NavigationLink to="/roman-arabic" onClick={toggleMenu}>Conversor</NavigationLink>
+                        <NavigationLink to="/converter" onClick={toggleMenu}>Conversor</NavigationLink>
                     </NavigationListItem>
                     <NavigationListItem>
                         <NavigationLink to="/game-of-life" onClick={toggleMenu}>Jogo da Vida</NavigationLink>

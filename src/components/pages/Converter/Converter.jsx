@@ -1,35 +1,44 @@
 import { useState } from "react";
-import { Container, Title, Form, Input, Label, ArabicNumber, ErrorMessage } from "./styles";
+import { Container, Title, Form, Input, Label, RomanNumber, ArabicNumber, ErrorMessage } from "./styles";
 import Button from "../../Button/Button";
 
-
 const RomanConverter = () => {
-    // State hooks para o número romano, número arábico e mensagem de erro
     const [romanNumber, setRomanNumber] = useState("");
     const [arabicNumber, setArabicNumber] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
-    // Manipulador de evento para alterar o número romano
     const handleRomanInputChange = (event) => {
         setRomanNumber(event.target.value);
         setErrorMessage("");
     };
 
-    // Manipulador de evento para a conversão do número romano para arábico
+    const handleArabicInputChange = (event) => {
+        setArabicNumber(event.target.value);
+        setErrorMessage("");
+    };
+
     const handleConvertClick = () => {
-        try {
-            // Chama a função de conversão e atualiza o número arábico
-            const arabic = convertRomanToArabic(romanNumber);
-            setArabicNumber(arabic.toString());
-            setErrorMessage("");
-        } catch (error) {
-            // Em caso de erro, define a mensagem de erro e limpa o número arábico
-            setErrorMessage("Número romano inválido");
-            setArabicNumber("");
+        if (romanNumber !== "") {
+            try {
+                const arabic = convertRomanToArabic(romanNumber);
+                setArabicNumber(arabic.toString());
+                setErrorMessage("");
+            } catch (error) {
+                setErrorMessage("Número romano inválido");
+                setArabicNumber("");
+            }
+        } else if (arabicNumber !== "") {
+            try {
+                const roman = convertArabicToRoman(parseInt(arabicNumber));
+                setRomanNumber(roman);
+                setErrorMessage("");
+            } catch (error) {
+                setErrorMessage("Número arábico inválido");
+                setRomanNumber("");
+            }
         }
     };
 
-    // Função para converter o número romano para arábico
     const convertRomanToArabic = (roman) => {
         // Tabela de símbolos romanos e seus valores arábicos correspondentes
         const romanNumerals = {
@@ -104,13 +113,47 @@ const RomanConverter = () => {
         return arabic;
     };
 
+    const convertArabicToRoman = (arabic) => {
+        const romanNumerals = [
+            { value: 1000, numeral: "M" },
+            { value: 900, numeral: "CM" },
+            { value: 500, numeral: "D" },
+            { value: 400, numeral: "CD" },
+            { value: 100, numeral: "C" },
+            { value: 90, numeral: "XC" },
+            { value: 50, numeral: "L" },
+            { value: 40, numeral: "XL" },
+            { value: 10, numeral: "X" },
+            { value: 9, numeral: "IX" },
+            { value: 5, numeral: "V" },
+            { value: 4, numeral: "IV" },
+            { value: 1, numeral: "I" }
+        ];
 
+        let roman = "";
+        let num = arabic;
 
-    // Renderização do componente
+        for (let i = 0; i < romanNumerals.length; i++) {
+            while (num >= romanNumerals[i].value) {
+                roman += romanNumerals[i].numeral;
+                num -= romanNumerals[i].value;
+            }
+        }
+
+        return roman;
+    };
+
+    // Resetar os números
+    const handleResetClick = () => {
+        setRomanNumber("");
+        setArabicNumber("");
+        setErrorMessage("");
+    }
+
     return (
         <>
             <Container>
-                <Title>Conversor de Números Romanos</Title>
+                <Title>Conversor de Números</Title>
                 <Form>
                     <Label>
                         Insira um número romano:
@@ -120,17 +163,33 @@ const RomanConverter = () => {
                             onChange={handleRomanInputChange}
                         />
                     </Label>
+                    <Label>
+                        Insira um número arábico:
+                        <Input
+                            type="text"
+                            value={arabicNumber}
+                            onChange={handleArabicInputChange}
+                        />
+                    </Label>
                     <Button type="button" onClick={handleConvertClick}>
                         Converter
                     </Button>
+                    <Button
+                        type="button"
+                        onClick={handleResetClick}>
+                        Resetar
+                    </Button>
+
                 </Form>
                 {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
                 {arabicNumber && (
                     <ArabicNumber>O número arábico correspondente é: {arabicNumber}</ArabicNumber>
                 )}
+                {romanNumber && (
+                    <RomanNumber>O número romano correspondente é: {romanNumber}</RomanNumber>
+                )}
             </Container>
         </>
-
     );
 };
 

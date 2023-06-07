@@ -46,3 +46,9 @@ export const ArabicNumber = styled.p`
   font-size: 18px;
 
 `;
+
+
+export const RomanNumber = styled.p`
+  text-align: center;
+  font-size: 18px;
+`
