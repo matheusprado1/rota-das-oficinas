@@ -30,4 +30,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region sa-east-1 \
-            dist s3://rota-das-oficinas
+            dist s3://rota-das-oficinas/
