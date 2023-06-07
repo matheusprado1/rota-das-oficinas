@@ -82,3 +82,4 @@ Entre em contato comigo caso tenha alguma dúvida ou sugestão:
 
 - Email: matheusprado1096@gmail.com
 - WhatsApp: +55 (34) 98899-6340
+- Linkedin: https://www.linkedin.com/in/matheus-prado-de-oliveira/
