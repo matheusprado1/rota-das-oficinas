@@ -66,7 +66,7 @@ Após executar o comando acima, o projeto será iniciado localmente e você pode
 O projeto está organizado da seguinte forma:
 
 - `src/components`: Diretório contendo os componentes compartilhados do projeto.
-- `src/components/pages/RomanConverter`: Diretório contendo a página do Conversor de Números Romanos.
+- `src/components/pages/Converter`: Diretório contendo a página do Conversor de Números Romanos.
 - `src/components/pages/GameOfLife`: Diretório contendo a página do Jogo da Vida de John Horton Conway.
 - `src/components/pages/Calculator`: Diretório contendo a página do Divisor de Contas de Restaurante.
 
