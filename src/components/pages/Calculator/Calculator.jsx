@@ -3,44 +3,50 @@ import Button from '../../Button/Button';
 import { Container, Title, Section, Label, CheckboxLabel, Result } from './styles';
 
 const Calculator = () => {
-    const [products, setProducts] = useState([]);
-    const [customers, setCustomers] = useState([]);
-    const [splitCosts, setSplitCosts] = useState({});
+    const [products, setProducts] = useState([]); // Estado para armazenar os produtos
+    const [customers, setCustomers] = useState([]); // Estado para armazenar os clientes
+    const [splitCosts, setSplitCosts] = useState({}); // Estado para armazenar os custos divididos
 
     const handleProductChange = (index, field, value) => {
+        // Função para atualizar os dados de um produto específico
         const updatedProducts = [...products];
         updatedProducts[index] = { ...updatedProducts[index], [field]: value };
         setProducts(updatedProducts);
     };
 
     const handleCustomerChange = (index, field, value) => {
+        // Função para atualizar os dados de um cliente específico
         const updatedCustomers = [...customers];
         updatedCustomers[index] = { ...updatedCustomers[index], [field]: value };
         setCustomers(updatedCustomers);
     };
 
     const handleAddProduct = () => {
+        // Função para adicionar um novo produto
         setProducts([...products, { id: `product-${products.length}`, name: '', price: 0 }]);
     };
 
     const handleAddCustomer = () => {
+        // Função para adicionar um novo cliente
         setCustomers([...customers, { id: `customer-${customers.length}`, name: '', consumption: {}, consumptionSplit: {} }]);
     };
 
     const handleSplitBill = () => {
+        // Função para dividir a conta entre os clientes
         const totalCost = products.reduce((total, product) => total + product.price, 0);
         const numCustomers = customers.length;
 
         if (totalCost === 0 || numCustomers === 0) {
-            alert('Insira produtos e clientes antes de dividir a conta.');
+            alert('Insira produtos e clientes antes de dividir a conta.'); // Alerta se não houver produtos ou clientes
             return;
         }
 
-        const serviceRate = 0.1; // 10% service rate
+        const serviceRate = 0.1; // Taxa de serviço de 10%
 
         const newSplitCosts = {};
 
         customers.forEach(customer => {
+            // Calcula os custos individuais para cada cliente
             const customerConsumption = customer.consumption;
             let customerCost = 0;
 
@@ -55,16 +61,17 @@ const Calculator = () => {
             });
 
             const serviceCharge = customerCost * serviceRate;
-            newSplitCosts[customer.name] = customerCost + serviceCharge;
+            newSplitCosts[customer.name] = customerCost + serviceCharge; // Armazena os custos divididos para cada cliente
         });
 
-        setSplitCosts(newSplitCosts);
+        setSplitCosts(newSplitCosts); // Atualiza os custos divididos
     };
 
     const handleResetBill = () => {
-        setProducts([]);
-        setCustomers([]);
-        setSplitCosts({});
+        // Função para redefinir a conta
+        setProducts([]); // Limpa os produtos
+        setCustomers([]); // Limpa os clientes
+        setSplitCosts({}); // Limpa os custos divididos
     };
 
     return (
